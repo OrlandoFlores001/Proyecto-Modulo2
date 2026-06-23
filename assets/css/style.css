@@ -1,0 +1,28 @@
+@import url('https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background: linear-gradient(45deg ,rgb(26, 50, 115), rgb(47, 147, 164));
+    color: white;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-size: "PT Sans", sans-serif;
+}
+
+header{
+    height: 8vh;
+}
+
+main{
+    height: 87vh;
+}
+
+footer{
+    height: 5vh;
+}
