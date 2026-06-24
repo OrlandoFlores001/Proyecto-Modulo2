@@ -6,23 +6,120 @@
     box-sizing: border-box;
 }
 
-body{
-    background: linear-gradient(45deg ,rgb(26, 50, 115), rgb(47, 147, 164));
+body {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #7445bb, #452277, #000000);
+    background-attachment: fixed;
     color: white;
+    font-family: "PT Sans", sans-serif;
+    display: flex;
+    flex-direction: column; 
 }
 
-h1, h2, h3, h4, h5, h6 {
-    font-size: "PT Sans", sans-serif;
+header {
+    padding: 20px 40px;
+    display: flex;
+    align-items: center;
 }
 
-header{
-    height: 8vh;
+main {
+    flex-grow: 1; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 20px;
 }
 
-main{
-    height: 87vh;
+footer {
+    padding: 20px;
+    text-align: left;
 }
 
-footer{
-    height: 5vh;
+.form-control,
+.card {
+    background-color: rgba(255, 255, 255, 0.068);
+    border: none !important;
+}
+.btn-astro-login, 
+.btn-astro-register {
+    font-family: "PT Sans", sans-serif;
+    font-weight: 700;
+    padding: 12px 30px;
+    border-radius: 50px;
+    text-decoration: none;
+    display: inline-block;
+    transition: all 0.3s ease;
+    margin: 10px;
+}
+
+.btn-astro-login {
+    background: linear-gradient(135deg, #8b5cf6, #6d28d9);
+    color: white !important;
+    border: none;
+    box-shadow: 0 4px 15px rgba(139, 92, 246, 0.4);
+}
+
+.btn-astro-login:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(139, 92, 246, 0.6);
+    background: linear-gradient(135deg, #a78bfa, #7c3aed);
+}
+
+.btn-astro-register {
+    background: transparent;
+    color: #a78bfa !important;
+    border: 2px solid #8b5cf6;
+}
+
+.btn-astro-register:hover {
+    transform: translateY(-3px);
+    background: rgba(139, 92, 246, 0.15);
+    color: white !important;
+    box-shadow: 0 6px 20px rgba(139, 92, 246, 0.3);
+}
+
+.btn-astro-action {
+    background-color: rgba(255, 255, 255, 0.07) !important;
+    border: 1px solid rgba(255, 255, 255, 0.15) !important;
+    color: #a78bfa !important;
+    border-radius: 12px !important;
+
+    display: inline-flex !important;
+    align-items: center;
+    justify-content: center;
+    width: 48px !important;
+    height: 48px !important;
+    font-size: 20px !important;
+    
+    transition: all 0.3s ease;
+}
+
+.btn-astro-action:hover {
+    background-color: rgba(139, 92, 246, 0.2) !important;
+    border-color: #8b5cf6 !important;
+    color: white !important;
+    box-shadow: 0 0 15px rgba(139, 92, 246, 0.4);
+}
+
+.btn-astro-logout {
+    background-color: rgba(220, 53, 69, 0.1) !important;
+    border: 1px solid rgba(220, 53, 69, 0.3) !important;
+    color: #f87171 !important;
+    border-radius: 12px !important;
+    
+    display: inline-flex !important;
+    align-items: center;
+    justify-content: center;
+    width: 48px !important;
+    height: 48px !important;
+    font-size: 20px !important;
+    
+    transition: all 0.3s ease;
+}
+
+.btn-astro-logout:hover {
+    background-color: #dc3545 !important;
+    border-color: #dc3545 !important;
+    color: white !important;
+    box-shadow: 0 0 15px rgba(220, 53, 69, 0.5);
 }

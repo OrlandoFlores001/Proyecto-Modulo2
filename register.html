@@ -3,23 +3,100 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Alke Wallet</title>
+    <title>Registro | Proyecto Wallet</title>
 
     <!-- Bootstrap -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
 
     <!--Estilos-->
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
-    <header>
-        <h1 class="text-center">Alke Wallet</h1>
+    <header style="display: flex; align-items: center; gap: 12px; padding: 16px;">
+        <img src="assets/img/Astro Logo.png" alt="Logo" width="50">
+        <h1 style="margin: 0;">Astro-Wallet</h1>
     </header>
-
+    <main>
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-12 col-md-8">
+                    <div id="mensaje"></div>
+                    <h2 class="text-center mb-4">Registro de usuario</h2>
+                    <form id="form-registro">
+                        <div class="mb-3">
+                            <label for="nombre" class="form-label">Nombre Completo</label>
+                            <input type="text" name="nombre" class="form-control" id="nombre" placeholder="Ingrese su nombre">
+                        </div>
+                        <div class="mb-3">
+                            <label for="usuario" class="form-label">Usuario</label>
+                            <input type="text" name="usuario" class="form-control" id="usuario" placeholder="Ingrese su usuario">
+                        </div>
+                        <div class="mb-3">
+                            <label for="password" class="form-label">Contraseña</label>
+                            <input type="password" name="password" class="form-control" id="password" placeholder="Ingrese contraseña">
+                        </div>
+                        <div class="mb-3">
+                            <label for="confirmar_password" class="form-label">Confirmar contraseña</label>
+                            <input type="password" name="confirmar_password" class="form-control" id="confirmar_password" placeholder="Reingrese contraseña">
+                        </div>
+                        <button class="btn btn-astro-register mt-3 w-100">Registrarse</button>
+                    </form>
+                    <div>
+                        <p class="text-center pt-3">¿Ya tienes cuenta? <a href="login.html">Iniciar Sesión</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
     <footer>
-        <p class="text-center">© 2026 Alke Wallet</p>
+        <p>© 2026 Astro-Wallet</p>
     </footer>
     
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous"></script>
+
+    <script>
+        document.getElementById("form-registro").addEventListener("submit", function(event){
+            event.preventDefault();
+
+            const nombre = document.getElementById("nombre").value;
+            const usuario= document.getElementById("usuario").value;
+            const password= document.getElementById("password").value;
+            const confirmarPassword= document.getElementById("confirmar_password").value;
+
+            if(password !== confirmarPassword){
+                document.getElementById("mensaje").innerHTML = `
+                <div class="alert alert-danger alert-dismissible fade show">
+                    Las contraseñas no coinciden.
+                    <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                    </div>
+                `;
+                return;
+            }
+
+            const nuevoUsuario = {
+                nombre,
+                usuario,
+                password
+            }
+
+            let usuarios = JSON.parse(localStorage.getItem("usuarios")) || [];
+
+            usuarios.push(nuevoUsuario);
+
+            localStorage.setItem("usuarios", JSON.stringify(usuarios));
+
+            document.getElementById("mensaje").innerHTML = `
+                <div class="alert alert-success alert-dismissible fade show">
+                    Registro exitoso. Redirigiendo...
+                    <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                    </div>
+                `;
+
+            setTimeout(() => {
+                window.location.href = "login.html";
+            }, 3000);
+
+        });
+    </script>
 </body>
 </html>
