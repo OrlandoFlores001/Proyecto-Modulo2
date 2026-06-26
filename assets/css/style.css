@@ -35,11 +35,48 @@ footer {
     text-align: left;
 }
 
-.form-control,
 .card {
     background-color: rgba(255, 255, 255, 0.068);
     border: none !important;
 }
+
+.form-control {
+    background-color: rgba(255, 255, 255, 0.08) !important;
+    border: 1px solid rgba(255, 255, 255, 0.15) !important;
+    color: white !important;
+    padding: 12px 16px;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+}
+
+.form-label {
+    color: #e2d6ff;
+    font-weight: 700;
+    font-size: 0.9rem;
+}
+
+.form-control::placeholder {
+    color: rgba(255, 255, 255, 0.45) !important;
+}
+
+.form-control:focus {
+    background-color: rgba(255, 255, 255, 0.15) !important;
+    border-color: #8b5cf6 !important; 
+    box-shadow: 0 0 12px rgba(139, 92, 246, 0.5) !important; 
+}
+
+.astro-icon-wrapper i {
+    color: #a78bfa;
+    filter: drop-shadow(0 0 8px rgba(139, 92, 246, 0.6));
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.card:hover .astro-icon-wrapper i {
+    transform: scale(1.1);
+    color: #ffffff;
+    filter: drop-shadow(0 0 12px rgba(139, 92, 246, 0.9));
+}
+
 .btn-astro-login, 
 .btn-astro-register {
     font-family: "PT Sans", sans-serif;
@@ -83,14 +120,12 @@ footer {
     border: 1px solid rgba(255, 255, 255, 0.15) !important;
     color: #a78bfa !important;
     border-radius: 12px !important;
-
     display: inline-flex !important;
     align-items: center;
     justify-content: center;
     width: 48px !important;
     height: 48px !important;
     font-size: 20px !important;
-    
     transition: all 0.3s ease;
 }
 
@@ -106,14 +141,12 @@ footer {
     border: 1px solid rgba(220, 53, 69, 0.3) !important;
     color: #f87171 !important;
     border-radius: 12px !important;
-    
     display: inline-flex !important;
     align-items: center;
     justify-content: center;
     width: 48px !important;
     height: 48px !important;
     font-size: 20px !important;
-    
     transition: all 0.3s ease;
 }
 
