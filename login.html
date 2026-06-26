@@ -1,16 +1,19 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Inicio Sesión | Proyecto Wallet</title>
 
     <!-- Bootstrap -->
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
 
     <!--Estilos-->
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
+
 <body>
     <header style="display: flex; align-items: center; gap: 12px; padding: 16px;">
         <img src="assets/img/Astro Logo.png" alt="Logo" width="50">
@@ -25,11 +28,13 @@
                     <form id="form-login">
                         <div class="mb-3">
                             <label for="usuario" class="form-label">Usuario</label>
-                            <input type="text" name="usuario" class="form-control" id="usuario" placeholder="Ingrese su usuario">
+                            <input type="text" name="usuario" class="form-control" id="usuario"
+                                placeholder="Ingrese su usuario">
                         </div>
                         <div class="mb-3">
                             <label for="password" class="form-label">Contraseña</label>
-                            <input type="password" name="password" class="form-control" id="password" placeholder="Ingrese contraseña">
+                            <input type="password" name="password" class="form-control" id="password"
+                                placeholder="Ingrese contraseña">
                         </div>
                         <button class="btn btn-astro-login mt-3 w-100">Iniciar sesión</button>
                     </form>
@@ -43,23 +48,25 @@
     <footer>
         <p>© 2026 Astro-Wallet</p>
     </footer>
-    
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+        crossorigin="anonymous"></script>
 
     <script>
-        document.getElementById("form-login").addEventListener("submit", function(event){
+        document.getElementById("form-login").addEventListener("submit", function (event) {
             event.preventDefault();
 
-            const usuario= document.getElementById("usuario").value;
-            const password= document.getElementById("password").value;
+            const usuario = document.getElementById("usuario").value;
+            const password = document.getElementById("password").value;
 
             let usuarios = JSON.parse(localStorage.getItem("usuarios")) || [];
 
-            const usuarioEncontrado = usuarios.find(function (user){
+            const usuarioEncontrado = usuarios.find(function (user) {
                 return user.usuario === usuario && user.password === password;
             });
 
-            if (usuarioEncontrado){
+            if (usuarioEncontrado) {
                 localStorage.setItem("usuarioLogueado", JSON.stringify(usuarioEncontrado));
 
                 document.getElementById("mensaje").innerHTML = `
@@ -88,4 +95,5 @@
         })
     </script>
 </body>
+
 </html>
